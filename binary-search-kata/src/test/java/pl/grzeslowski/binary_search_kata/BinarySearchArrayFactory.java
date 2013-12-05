@@ -2,7 +2,7 @@ package pl.grzeslowski.binary_search_kata;
 
 final class BinarySearchArrayFactory {
 
-    public BinarySearchArray<Object> newBinarySearchArray(final Class<?> clazz) {
+    public BinarySearchArray<Integer> newBinarySearchArray(final Class<?> clazz) {
         if (clazz == FunctionalBinarySearch.class) {
             return new FunctionalBinarySearch<>();
         } else if (clazz == IterativeBinarySearch.class) {

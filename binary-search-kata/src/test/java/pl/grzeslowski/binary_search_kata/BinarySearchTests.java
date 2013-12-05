@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(value = Parameterized.class)
 public class BinarySearchTests {
 
-    private BinarySearchArray<Object> bsa;
+    private BinarySearchArray<Integer> bsa;
     private final BinarySearchArrayFactory factory = new BinarySearchArrayFactory();
     private final Class<?> clazz;
 
@@ -40,7 +40,7 @@ public class BinarySearchTests {
     public void add_normal_test_case() throws Exception {
 
         // given
-        final Object object = new Object();
+        final Integer object = 5;
 
         // expected
         final boolean expected = true;
@@ -57,8 +57,8 @@ public class BinarySearchTests {
     public void add_but_this_object_is_not_in_array() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object objectNotInArray = new Object();
+        final Integer object = 5;
+        final Integer objectNotInArray = 10;
 
         // expected
         final boolean expected = false;
@@ -89,7 +89,7 @@ public class BinarySearchTests {
     public void remove_was_in_bsa() throws Exception {
 
         // given
-        final Object object = new Object();
+        final Integer object = 100;
         bsa.add(object);
 
         // expected
@@ -109,7 +109,7 @@ public class BinarySearchTests {
     public void remove_was_not_in_bsa() throws Exception {
 
         // given
-        final Object object = new Object();
+        final Integer object = 123;
 
         // expected
         final boolean expectedRemove = false;
@@ -134,16 +134,20 @@ public class BinarySearchTests {
     @Test(expected = IllegalArgumentException.class)
     public void find_empty() throws Exception {
 
+        // given
+        final Integer object=992;
+        
+        
         // when
-        bsa.findIndex(new Object());
+        bsa.findIndex(object);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void find_one_element_not_in() throws Exception {
 
         // given
-        final Object otherObject = new Object();
-        final Object object = new Object();
+        final Integer otherObject = 1233;
+        final Integer object = 11222;
         bsa.add(object);
 
         // when
@@ -154,7 +158,7 @@ public class BinarySearchTests {
     public void find_one_element_in_bsa() throws Exception {
 
         // given
-        final Object object = new Object();
+        final Integer object = 11;
         bsa.add(object);
 
         // expected
@@ -171,9 +175,9 @@ public class BinarySearchTests {
     public void find_three_elements_in_bsa_idx_0() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -192,9 +196,9 @@ public class BinarySearchTests {
     public void find_three_elements_in_bsa_idx_1() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -213,9 +217,9 @@ public class BinarySearchTests {
     public void find_three_elements_in_bsa_idx_2() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -234,10 +238,10 @@ public class BinarySearchTests {
     public void find_three_elements_not_in_bsa() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object notIn = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer notIn = 1;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -250,10 +254,10 @@ public class BinarySearchTests {
     public void find_four_elements_in_bsa_idx_0() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object object3 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer object3 = 1;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -273,10 +277,10 @@ public class BinarySearchTests {
     public void find_four_elements_in_bsa_idx_1() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object object3 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer object3 = 1;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -296,10 +300,10 @@ public class BinarySearchTests {
     public void find_four_elements_in_bsa_idx_2() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object object3 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer object3 = 1;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -319,10 +323,10 @@ public class BinarySearchTests {
     public void find_four_elements_in_bsa_idx_3() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object object3 = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer object3 = 1;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
@@ -342,11 +346,11 @@ public class BinarySearchTests {
     public void find_four_elements_not_in_bsa() throws Exception {
 
         // given
-        final Object object = new Object();
-        final Object object1 = new Object();
-        final Object object2 = new Object();
-        final Object object3 = new Object();
-        final Object notIn = new Object();
+        final Integer object = 222;
+        final Integer object1 = 12333;
+        final Integer object2 = 997;
+        final Integer object3 = 1;
+        final Integer notIn = -10000;
         bsa.add(object);
         bsa.add(object1);
         bsa.add(object2);
