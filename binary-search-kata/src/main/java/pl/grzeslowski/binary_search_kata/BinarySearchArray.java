@@ -7,8 +7,6 @@ public interface BinarySearchArray<T extends Comparable<T>> {
      * 
      * @throws NullPointerException
      *             if element is null.
-     * @throws IllegalArgumentException
-     *             if element is already in array.
      * @param element
      *            element to be added.
      */
