@@ -54,20 +54,102 @@ public class BinarySearchTests {
     }
 
     @Test
-    public void add_but_this_object_is_not_in_array() throws Exception {
+    public void add_in_first() throws Exception {
+
+        // given
+        final Integer object = 5;
+        final Integer object2 = 1;
+
+        // expected
+        final boolean expected = true;
+        final boolean expected2 = true;
+
+        // when
+        bsa.add(object);
+        bsa.add(object2);
+
+        // then
+        final boolean contains = bsa.contains(object);
+        assertThat(contains).isEqualTo(expected);
+        final boolean contains2 = bsa.contains(object2);
+        assertThat(contains2).isEqualTo(expected2);
+    }
+
+    @Test
+    public void add_in_last() throws Exception {
+
+        // given
+        final Integer object = 5;
+        final Integer object2 = 10;
+
+        // expected
+        final boolean expected = true;
+        final boolean expected2 = true;
+
+        // when
+        bsa.add(object);
+        bsa.add(object2);
+
+        // then
+        final boolean contains = bsa.contains(object);
+        assertThat(contains).isEqualTo(expected);
+        final boolean contains2 = bsa.contains(object2);
+        assertThat(contains2).isEqualTo(expected2);
+    }
+
+    @Test
+    public void add_in_middle() throws Exception {
+
+        // given
+        final Integer object = 5;
+        final Integer object2 = 1;
+        final Integer object3 = 14;
+
+        // expected
+        final boolean expected = true;
+        final boolean expected2 = true;
+        final boolean expected3 = true;
+
+        // when
+        bsa.add(object);
+        bsa.add(object2);
+        bsa.add(object3);
+
+        // then
+        final boolean contains = bsa.contains(object);
+        assertThat(contains).isEqualTo(expected);
+        final boolean contains2 = bsa.contains(object2);
+        assertThat(contains2).isEqualTo(expected2);
+        final boolean contains3 = bsa.contains(object3);
+        assertThat(contains3).isEqualTo(expected3);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void add_twice() throws Exception {
+
+        // given
+        final Integer object = 5;
+
+        // when
+        bsa.add(object);
+        bsa.add(object);
+    }
+
+    @Test
+    public void contains_but_this_object_is_not_in_array() throws Exception {
 
         // given
         final Integer object = 5;
         final Integer objectNotInArray = 10;
+        bsa.add(object);
 
         // expected
         final boolean expected = false;
 
         // when
-        bsa.add(object);
+        final boolean contains = bsa.contains(objectNotInArray);
 
         // then
-        final boolean contains = bsa.contains(objectNotInArray);
         assertThat(contains).isEqualTo(expected);
     }
 
@@ -135,9 +217,8 @@ public class BinarySearchTests {
     public void find_empty() throws Exception {
 
         // given
-        final Integer object=992;
-        
-        
+        final Integer object = 992;
+
         // when
         bsa.findIndex(object);
     }
