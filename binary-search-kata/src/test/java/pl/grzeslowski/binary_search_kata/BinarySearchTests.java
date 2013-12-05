@@ -243,7 +243,7 @@ public class BinarySearchTests {
         bsa.add(object);
 
         // expected
-        final int expected = 1;
+        final int expected = 0;
 
         // when
         final int findIndex = bsa.findIndex(object);
@@ -257,11 +257,11 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
-        final Integer object2 = 997;
-        bsa.add(object);
+        final Integer object1 = 333;
+        final Integer object2 = 444;
         bsa.add(object1);
         bsa.add(object2);
+        bsa.add(object);
 
         // expected
         final int expected = 0;
@@ -277,12 +277,12 @@ public class BinarySearchTests {
     public void find_three_elements_in_bsa_idx_1() throws Exception {
 
         // given
-        final Integer object = 222;
-        final Integer object1 = 12333;
-        final Integer object2 = 997;
+        final Integer object = 22;
+        final Integer object1 = 333;
+        final Integer object2 = 444;
+        bsa.add(object2);
         bsa.add(object);
         bsa.add(object1);
-        bsa.add(object2);
 
         // expected
         final int expected = 1;
@@ -299,11 +299,11 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
         bsa.add(object);
-        bsa.add(object1);
         bsa.add(object2);
+        bsa.add(object1);
 
         // expected
         final int expected = 2;
@@ -320,12 +320,12 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
         final Integer notIn = 1;
-        bsa.add(object);
-        bsa.add(object1);
         bsa.add(object2);
+        bsa.add(object1);
+        bsa.add(object);
 
         // when
         bsa.findIndex(notIn);
@@ -336,11 +336,11 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
-        final Integer object3 = 1;
-        bsa.add(object);
+        final Integer object3 = 10000;
         bsa.add(object1);
+        bsa.add(object);
         bsa.add(object2);
         bsa.add(object3);
 
@@ -359,13 +359,13 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
-        final Integer object3 = 1;
-        bsa.add(object);
-        bsa.add(object1);
-        bsa.add(object2);
+        final Integer object3 = 10000;
         bsa.add(object3);
+        bsa.add(object2);
+        bsa.add(object1);
+        bsa.add(object);
 
         // expected
         final int expected = 1;
@@ -382,13 +382,13 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
-        final Integer object3 = 1;
+        final Integer object3 = 10000;
         bsa.add(object);
         bsa.add(object1);
-        bsa.add(object2);
         bsa.add(object3);
+        bsa.add(object2);
 
         // expected
         final int expected = 2;
@@ -405,12 +405,12 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
-        final Integer object3 = 1;
-        bsa.add(object);
-        bsa.add(object1);
+        final Integer object3 = 10000;
         bsa.add(object2);
+        bsa.add(object1);
+        bsa.add(object);
         bsa.add(object3);
 
         // expected
@@ -428,9 +428,9 @@ public class BinarySearchTests {
 
         // given
         final Integer object = 222;
-        final Integer object1 = 12333;
+        final Integer object1 = 333;
         final Integer object2 = 997;
-        final Integer object3 = 1;
+        final Integer object3 = 10000;
         final Integer notIn = -10000;
         bsa.add(object);
         bsa.add(object1);
