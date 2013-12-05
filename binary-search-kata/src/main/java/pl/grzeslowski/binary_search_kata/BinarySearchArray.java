@@ -5,6 +5,8 @@ public interface BinarySearchArray<T> {
     /**
      * Add elements to BinarySearchArray.
      * 
+     * @throws NullPointerException
+     *             if element is null.
      * @param element
      *            element to be added.
      */
@@ -15,6 +17,8 @@ public interface BinarySearchArray<T> {
      * 
      * @param element
      *            element to remove.
+     * @throws NullPointerException
+     *             if element is null.
      * @return true if element was in array and it was removed, false otherwise.
      */
     boolean remove(final T element);
@@ -24,6 +28,8 @@ public interface BinarySearchArray<T> {
      * 
      * @param element
      *            element to check if it's in.
+     * @throws NullPointerException
+     *             if element is null.
      * @return true if element is in array, false otherwise.
      */
     boolean contains(final T element);
@@ -33,6 +39,8 @@ public interface BinarySearchArray<T> {
      * 
      * @param element
      *            element to check index.
+     * @throws NullPointerException
+     *             if element is null.
      * @throws IllegalArgumentException
      *             if element is not in BinarySearchArray.
      * @return index of element.
