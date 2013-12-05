@@ -1,6 +1,6 @@
 package pl.grzeslowski.binary_search_kata;
 
-public interface BinarySearchArray<T> {
+public interface BinarySearchArray<T extends Comparable<T>> {
 
     /**
      * Add elements to BinarySearchArray.
